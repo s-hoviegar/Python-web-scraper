@@ -21,16 +21,18 @@ class LinksFollowPipeline(object):
         self.curs.execute("""DROP TABLE IF EXISTS links_tb""")
         self.curs.execute("""CREATE TABLE links_tb(
             text text,
-            link text)""")
+            link text,
+            current_page text)""")
 
     def process_item(self, item, spider):
         self.store_db(item)
-        print( "Pipeline: Text: " + item["link_text"][0] + "    Link: " + item["link_href"][0])
+        print( "Pipeline: Text: " + item["link_text"] + "    Link: " + item["link_href"])
         return item
 
     def store_db(self, item):
-        self.curs.execute("""INSERT INTO links_tb VALUES (?,?)""",(
-            item["link_text"][0],
-            item["link_href"][0]
+        self.curs.execute("""INSERT INTO links_tb VALUES (?,?,?)""",(
+            item["link_text"],
+            item["link_href"],
+            item["current_page"]
         ))
         self.conn.commit()
