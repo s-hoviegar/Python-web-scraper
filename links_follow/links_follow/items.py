@@ -11,4 +11,5 @@ import scrapy
 class LinksFollowItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
-    pass
+    link_text = scrapy.Field()
+    link_href = scrapy.Field()
