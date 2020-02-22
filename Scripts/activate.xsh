@@ -28,7 +28,7 @@ def _deactivate(args):
 _deactivate(["nondestructive"])
 aliases["deactivate"] = _deactivate
 
-$VIRTUAL_ENV = r"D:\Programs\web_mining"
+$VIRTUAL_ENV = r"D:\Programs\web_mining\Python-web-scraper"
 
 $_OLD_VIRTUAL_PATH = $PATH
 $PATH = $PATH[:]

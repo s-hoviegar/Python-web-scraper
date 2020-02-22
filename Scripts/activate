@@ -46,7 +46,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV='D:\Programs\web_mining'
+VIRTUAL_ENV='D:\Programs\web_mining\Python-web-scraper'
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

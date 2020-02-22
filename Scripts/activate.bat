@@ -1,6 +1,6 @@
 @echo off
 
-set "VIRTUAL_ENV=D:\Programs\web_mining"
+set "VIRTUAL_ENV=D:\Programs\web_mining\Python-web-scraper"
 
 if defined _OLD_VIRTUAL_PROMPT (
     set "PROMPT=%_OLD_VIRTUAL_PROMPT%"
