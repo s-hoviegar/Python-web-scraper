@@ -22,7 +22,9 @@ class LinksFollowPipeline(object):
         self.curs.execute("""CREATE TABLE links_tb(
             text text,
             link text,
-            current_page text)""")
+            link_type text,
+            current_page text,
+            page_title text)""")
 
     def process_item(self, item, spider):
         self.store_db(item)
@@ -30,9 +32,11 @@ class LinksFollowPipeline(object):
         return item
 
     def store_db(self, item):
-        self.curs.execute("""INSERT INTO links_tb VALUES (?,?,?)""",(
+        self.curs.execute("""INSERT INTO links_tb VALUES (?,?,?,?,?)""",(
             item["link_text"],
             item["link_href"],
-            item["current_page"]
+            item["link_type"],
+            item["current_page"],
+            item["page_title"]
         ))
         self.conn.commit()

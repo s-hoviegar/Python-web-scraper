@@ -13,4 +13,6 @@ class LinksFollowItem(scrapy.Item):
     # name = scrapy.Field()
     link_text = scrapy.Field()
     link_href = scrapy.Field()
+    link_type = scrapy.Field()
     current_page = scrapy.Field()
+    page_title = scrapy.Field()
