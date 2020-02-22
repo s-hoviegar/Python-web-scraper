@@ -16,7 +16,7 @@ class LinksFollowSpider(scrapy.Spider):
         # all_a_links = response.css("a")
         current_page = response.url
         parsed_uri = urlparse(response.url)
-        domain = '{uri.scheme}://{uri.netloc}/'.format(uri=parsed_uri)
+        # domain = '{uri.scheme}://{uri.netloc}/'.format(uri=parsed_uri)
         domain_less = '{uri.netloc}'.format(uri=parsed_uri)
         # print (domain)
         # print (domain_less)
